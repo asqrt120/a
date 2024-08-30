@@ -1,0 +1,75 @@
+{
+\setlength{\parindent}{0cm}
+\textblockorigin{\SeitenrandLinks}{\SeitenrandOben} % Ursprung für Positionierung
+
+%\setlength{\parindent}{0pt}
+%\setlength{\baselineskip}{32pt}
+%\setlength{\parskip}{\baselineskip}
+\TabPositions{4cm}
+%\pagestyle{empty}
+\thispagestyle{empty}
+
+\begin{textblock*}{\UniversitaetLogoBreite}[1,0](\textwidth-11mm, 0.2cm-\SeitenrandOben)%
+    \raggedleft\includegraphics{logos/HS_Koblenz_Logo-RAC_rgb-1.max-1200x1200.jpg}%
+\end{textblock*}
+
+\begin{textblock*}{\textwidth}[0,0](0cm, 2cm)%
+{\fontsize{24pt}{26pt}\selectfont\textbf{\getTitle}}
+
+% \vspace*{50pt}
+% {\fontsize{18pt}{27pt}\selectfont\textbf{\getDoctype}}
+\end{textblock*}
+
+\vspace*{126.2mm}
+\fontsize{15pt}{17.5pt}\selectfont%
+% A thesis presented in part fulfilment of the requirements of the Degree of Master of Science at the Department of Civil, Geo and Environmental Engineering, Technical University of Munich.
+
+%\renewcommand{\baselinestretch}{1.47}
+\normalsize\selectfont
+\vspace*{6.3mm}
+
+
+\textbf{Supervisor} \tab
+\begin{minipage}[t]{\textwidth-\CurrentLineWidth}
+\begin{sloppypar}
+\getSupervisor\\
+{\fontfamily{qcr}\selectfont {\getChair}}\\
+% \getSupervisorc\\
+% \getSupervisord\\
+% {\fontfamily{qcr}\selectfont {\getOrganization}}
+\end{sloppypar}
+\end{minipage}
+
+\vspace*{6.3mm}
+\textbf{Submitted by} \tab
+\begin{minipage}[t]{\textwidth-\CurrentLineWidth}
+\getAuthor{}\\
+{\fontfamily{qcr}\selectfont {\getEmail}}
+\end{minipage}
+
+\vspace*{6.3mm}
+\textbf{Matrikelnummer} \tab
+\begin{minipage}[t]{\textwidth-\CurrentLineWidth}
+\getMatrikelnummer\strut
+\end{minipage}
+
+\vspace*{6.3mm}
+\textbf{Study Program} \tab
+\begin{minipage}[t]{\textwidth-\CurrentLineWidth}
+\getStudyProgram\strut
+\end{minipage}
+
+\vspace*{6.3mm}
+\textbf{Submitted on} \tab
+\begin{minipage}[t]{\textwidth-\CurrentLineWidth}
+\getSubmissionDate{}\\
+{\fontfamily{qcr}\selectfont {\getEmail}}
+\end{minipage}
+
+\vspace*{6.3mm}
+\textbf{University} \tab
+\getUniversity
+
+
+}
+\newpage
