@@ -1,0 +1,129 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+
+% TODO: decide if one-sided/two-sided
+%\documentclass[headsepline,footsepline,footinclude=false,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,BCOR=12mm,DIV=12]{scrbook} % two-sided % original source stated: BCOR=12mm,DIV=12
+\documentclass[headsepline,footsepline,footinclude=false,oneside,fontsize=11pt,paper=a4,listof=totoc,bibliography=totoc,DIV=12,fleqn]{scrbook} % one-sided
+\setlength\mathindent{0pt} %=======added by Qinglong: 'fleqn' in the document class and this command make all equations aligned to the left.
+
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+% TODO: change citation style in settings
+\usepackage{array} %for table values centering, can delete
+%\usepackage{graphicx} %for pictures in same line, can delete
+\usepackage[titletoc]{appendix} %for appendix setting, can delete
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}} %for table values centering, can delete if doesn't work
+\usepackage{afterpage} %for blank page after appendix
+\newcommand\blankpage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+    }
+\usepackage{listings} %for python in appendix
+\usepackage{xcolor} %for proper format of python code
+
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\input{settings}
+
+% TODO: change thesis information
+\newcommand*{\getModule}{MA 05 Global Trends and Technology Assessment}
+\newcommand*{\getUniversity}{Hochschule Koblenz - RheinAhrCampus}
+%\newcommand*{\getFaculty}{}
+%\newcommand*{\getOrganization}{Siemens Mobility}
+\newcommand*{\getChair}{Wirtschafts- und Sozialwissenschaften}
+\newcommand*{\getTitle}{Economic Trends: Social Inequality}
+%\newcommand*{\getTitleGer}{Titel der Abschlussarbeit}
+\newcommand*{\getAuthor}{Ashhar Husain}
+\newcommand*{\getEmail}{ahusain@rheinahrcampus.de}
+%\newcommand*{\getDoctype}{Master's Thesis}
+\newcommand*{\getSupervisor}{Prof. Dr. Magdalena Stülb}
+% \newcommand*{\getSupervisorc}{Mr.}
+% \newcommand*{\getSupervisord}{Mr.}
+\newcommand*{\getSubmissionDate}{01.03.2022}
+\newcommand*{\getMatrikelnummer}{561313}
+%\newcommand*{\getSubmissionLocation}{Munich}
+\newcommand*{\getStudyProgram}{Management Leadership Innovation (MLI)}
+
+
+
+\begin{document}
+% TODO: decide on used language
+%\selectlanguage{ngerman}
+\selectlanguage{english}
+
+% Set page numbering to avoid "destination with the same identifier has been already used" warning for cover page.
+% (see https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Problems_with_Links_and_Pages).
+\pagenumbering{alph}
+%\input{pages/cover}
+
+\frontmatter{}
+
+\input{pages/title}
+%\input{pages/disclaimer}
+\linespread{1.25}
+\input{pages/abstract}
+\microtypesetup{protrusion=false}
+\tableofcontents{}
+\listoffigures{}
+%\listoftables{} 
+\microtypesetup{protrusion=true}
+% \printglossaries
+
+\mainmatter{}
+
+\input{chapters/introduction}
+\input{chapters/theoreticalBackground}
+\input{chapters/literatureReview}
+\input{chapters/trendsAnalysis}
+\input{chapters/caseStudies}
+\input{chapters/conclusion&discussion}
+
+
+\printbibliography{}
+
+
+\clearpage
+
+
+% \begin{appendices}
+% \appendix
+% \input{pages/appendix}
+% \end{appendices}
+% %\appendix
+%  %\renewcommand*\printchaptername{\Large\bfseries\appendixname~}
+
+
+
+
+\microtypesetup{protrusion=false}
+\microtypesetup{protrusion=true}
+
+
+\end{document}
